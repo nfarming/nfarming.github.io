@@ -66,46 +66,36 @@ fi
 
 
 
-# check if gh-pages branch exist ,command below return 0 for success 128 for failure
-git show-branch gh-pages
+git checkout master
 
-if [ $? != 0 ]; then
-git checkout --orphan gh-pages # create pages branch
-git rm -rf .
 
-else
-git checkout gh-pages
-fi
-
-cEcho "In gh-pages branch , copying deployment files from master" yellow
+cEcho "In master branch , copying deployment files from development" yellow
 
 if [ $isCssPath ]; then
-  git checkout master -- "$cssPath"
+  git checkout development -- "$cssPath"
 fi
 
 if [ $isHtmlPath ]; then
-  git checkout master -- "$htmlPath"
+  git checkout development -- "$htmlPath"
 fi
 
 if [ $isJsPath ]; then
-  git checkout master -- "$jsPath/*.js"
+  git checkout development -- "$jsPath/*.js"
 fi
 
 if [ $isImagesPath ]; then
-  git checkout master -- "$imagesPath"
+  git checkout development -- "$imagesPath"
 fi
 
-git checkout master -- index.html
-git checkout master -- README.md
+git checkout development -- index.html
+git checkout development -- README.md
 
 
-cEcho " pushing changes to gh-pages" yellow
+cEcho " pushing changes to master" yellow
 
 git commit -a -m "$comment"
-git push origin gh-pages
+git push origin master
 
 cEcho " successfully deployed changes to gh-pages" yellow
 
-cEcho " switching back to master branch" yellow
-
-git checkout -f master
+git checkout development
