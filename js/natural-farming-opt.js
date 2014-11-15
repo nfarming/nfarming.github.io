@@ -4286,12 +4286,19 @@ ScalaJS.c.Lcom_chandu0101_naturalfarming_controllers_ViewController$.prototype.r
   var blogReader = ScalaJS.g["document"]["getElementById"]("tumbler");
   var seeds = ScalaJS.g["document"]["getElementById"]("seeds");
   if (((blogReader !== null) && (this.scope$1["posts"] !== (void 0)))) {
-    var jsx$1 = ScalaJS.m.Lcom_chandu0101_naturalfarming_components_BlogReader();
     var array = this.scope$1["posts"];
-    var this$3 = new ScalaJS.c.sjs_js_ArrayOps().init___sjs_js_Array(array);
-    var this$2 = ScalaJS.m.sci_List();
-    var cbf = this$2.ReusableCBFInstance$2;
-    jsx$1.componet__sci_List__Lorg_scalajs_dom_Node__I__Ljapgolly_scalajs_react_ReactComponentM(ScalaJS.as.sci_List(ScalaJS.i.sc_TraversableLike$class__to__sc_TraversableLike__scg_CanBuildFrom__O(this$3, cbf)), blogReader, (ScalaJS.m.Lcom_chandu0101_naturalfarming_components_BlogReader(), 5))
+    var this$2_$_scala$scalajs$js$ArrayOps$$array$f = array;
+    var jsx$1 = (ScalaJS.uI(this$2_$_scala$scalajs$js$ArrayOps$$array$f["length"]) > 0)
+  } else {
+    var jsx$1 = false
+  };
+  if (jsx$1) {
+    var jsx$2 = ScalaJS.m.Lcom_chandu0101_naturalfarming_components_BlogReader();
+    var array$1 = this.scope$1["posts"];
+    var this$5 = new ScalaJS.c.sjs_js_ArrayOps().init___sjs_js_Array(array$1);
+    var this$4 = ScalaJS.m.sci_List();
+    var cbf = this$4.ReusableCBFInstance$2;
+    jsx$2.componet__sci_List__Lorg_scalajs_dom_Node__I__Ljapgolly_scalajs_react_ReactComponentM(ScalaJS.as.sci_List(ScalaJS.i.sc_TraversableLike$class__to__sc_TraversableLike__scg_CanBuildFrom__O(this$5, cbf)), blogReader, (ScalaJS.m.Lcom_chandu0101_naturalfarming_components_BlogReader(), 5))
   };
   return ((seeds !== null) ? ScalaJS.m.Lcom_chandu0101_naturalfarming_components_SeedTable().component__sci_List__Lorg_scalajs_dom_Node__Ljapgolly_scalajs_react_ReactComponentM(ScalaJS.m.sci_Nil(), seeds) : (void 0))
 });
@@ -4553,7 +4560,7 @@ ScalaJS.c.Lcom_chandu0101_naturalfarming_services_TumblerService.prototype.init_
   if ((!requirement)) {
     throw new ScalaJS.c.jl_IllegalArgumentException().init___T(("requirement failed: " + "Missing argument 'http'."))
   };
-  this.turl$1 = "http://api.tumblr.com/v2/blog/chandu0101.tumblr.com";
+  this.turl$1 = "http://api.tumblr.com/v2/blog/nfarming.tumblr.com";
   this.API$undKEY$1 = "PPFLh8r2Jv171VKvsitDZS3wdPTjlTAmyb6DJtzPaVGhtmT0oX";
   return this
 });
