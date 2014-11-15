@@ -32,3 +32,18 @@ jsDependencies ++= Seq("org.webjars" % "angularjs" % "1.3.0" / "angular.min.js",
 
 // creates single js resource file for easy integration in html page
 skip in packageJSDependencies := false
+
+
+// copy  javascript files to js folder,that are generated using fastOptJS/fullOptJS
+
+crossTarget in (Compile, fullOptJS) := file("js")
+
+crossTarget in (Compile, fastOptJS) := file("js")
+
+crossTarget in (Compile, packageJSDependencies) := file("js")
+
+crossTarget in (Compile, packageScalaJSLauncher) := file("js")
+
+artifactPath in (Compile, fastOptJS) := ((crossTarget in (Compile, fastOptJS)).value /
+  ((moduleName in fastOptJS).value + "-opt.js"))
+  
