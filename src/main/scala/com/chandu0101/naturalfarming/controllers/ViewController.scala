@@ -44,7 +44,7 @@ object ViewController extends Controller {
   def renderReactComponents() = {
     val blogReader = dom.document.getElementById("tumbler")
     val seeds = dom.document.getElementById("seeds")
-    if(blogReader != null && scope.posts != js.undefined ) BlogReader.componet(scope.posts.to,blogReader)
+    if(blogReader != null && scope.posts != js.undefined && scope.posts.size > 0) BlogReader.componet(scope.posts.to,blogReader)
     if(seeds != null) SeedTable.component(Nil,seeds)
   }
 

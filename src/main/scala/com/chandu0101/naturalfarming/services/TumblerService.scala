@@ -21,7 +21,7 @@ class TumblerService(val http: HttpService) {
 
   require(http != null, "Missing argument 'http'.")
 
-  val turl = "http://api.tumblr.com/v2/blog/chandu0101.tumblr.com"
+  val turl = "http://api.tumblr.com/v2/blog/nfarming.tumblr.com"
   val API_KEY = "PPFLh8r2Jv171VKvsitDZS3wdPTjlTAmyb6DJtzPaVGhtmT0oX"
 
 
