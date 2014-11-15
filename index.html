@@ -6,9 +6,11 @@
   .ng-show {
    display: none !important;
   }
+
   [ng\:cloak], [ng-cloak], .ng-cloak {
    display: none !important;
   }
+
   .auto-gen-code-snippet {
    display: none;
   }
@@ -21,6 +23,7 @@
  <link rel="stylesheet" href="styles/bootstrap_flatly.min.css">
  <link rel="stylesheet" href="styles/app.css">
  <script type="text/javascript" src="js/natural-farming-jsdeps.js"></script>
+ <script type="text/javascript" src="js/react-bootstrap.js"></script>
  <!--<link rel="stylesheet" href="css/bootstrap_flatly.min.css">-->
 </head>
 <body ng-controller="appctrl">
@@ -35,8 +38,8 @@
    </div>
   </nav>
 
-  <main class="container">
-   <ng-view onload = "controller.tumblerpost()"></ng-view>
+  <main class="container" ng-controller="viewctrl">
+   <ng-view onload = "controller.renderReactComponents()"></ng-view>
   </main>
 
   <footer>
@@ -49,8 +52,8 @@
      </div>
    </div>
   </footer>
-
  <script src="js/natural-farming-opt.js"></script>
+ <!--<script src="js/natural-farming-fastopt.js.map"></script>-->
 <script src="js/natural-farming-launcher.js"></script>
 
 </body>
